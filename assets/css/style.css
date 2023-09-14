@@ -1,0 +1,195 @@
+/* VÁRIAVEIS DE CONFIGURAÇÃO - ROOT */
+:root{
+    --black-color: black;
+    --red-color: #DB0007;
+    --yellow-color: #FBE00A;
+    --white-color: white;
+    --gap: 3rem;
+}
+
+/* VÁRIAVEIS DE CONFIGURAÇÕES GLOBAIS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+/*
+*font-family: 'Lato', sans-serif;
+*font-family: 'Nunito', sans-serif;
+*font-family: 'Roboto', sans-serif;
+*/
+body{}
+h1{
+    font-size: 8rem;
+    text-transform: uppercase;
+}
+h2{
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+p{
+    font-size: 4rem;
+    line-height: 1.2rem;
+}
+a{
+    text-decoration: none;
+    font-family: 'Numito', sans-serif;
+    color: var(--white-color);
+}
+
+
+/* CLASSES */
+
+/* CLASSES GLOBAIS */
+.main-content{
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 10rem var(--gap)
+}
+.section{
+    min-height: 90vh;
+}
+.section-fit{
+    min-height: 50vh;
+}
+.white-bg{
+    background-color: var(--white-color);
+}
+.red-bg{
+    background-color: var(--red-color);
+}
+
+
+
+/* CLASSES DO MENU */
+.menu-spacing{
+    height: 6.5rem;
+}
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+    border-bottom: 0.3rem solid var(--white-color);
+}
+.menu-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--gap);
+}
+.menu h1{
+    display: flex;
+}
+.menu h1 img{
+    width: 10rem;
+}
+.menu ul{
+    display: flex;
+    list-style: none;
+}
+.menu ul li a{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    display: block;
+    padding: 2rem;
+    font-size: 1.6rem;
+    position: relative;
+    text-transform: capitalize;
+}
+.menu ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    width: 0;
+    height: 0.3rem;
+    background-color: var(--yellow-color);
+    transition: all 0.3s ease-in-out;
+}
+.menu ul li a:hover::after{
+    width: 60%;
+    left: 18%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------->>>>> RESPONSIVIDADE */
+.close-menu{
+    display: none;
+}
+@media(max-width: 800px){
+
+    /* MENU - MENU - MENU - MENU - MENU - MENU - MENU - MENU - MENU */
+    .menu{
+        bottom: 0;
+        text-align: center;
+        display: none;
+    }
+    .menu-content, .menu-content ul{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .menu-content{
+        min-height: 100vh;
+    }
+    .close-menu-label::after{
+        content: '≡';
+        position: fixed;
+        z-index: 2;
+        top: 2rem;
+        right: 2rem;
+        background: var(--yellow-color);
+        color: var(--black-color);
+        font-size: 3rem;
+        font-weight: bolder;
+        line-height: 3rem;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+    .close-menu:checked ~ .menu{
+        display: block;
+    }	
+    .close-menu:checked ~ .close-menu-label::after{
+        content: '×';
+    }
+    .menu-spacing{
+        height: 0;
+    }
+    /* MENU - MENU - MENU - MENU - MENU - MENU - MENU - MENU - MENU */
+}
