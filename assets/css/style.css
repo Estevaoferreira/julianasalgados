@@ -23,6 +23,13 @@
     - woff2
     */
 }
+/*
+*font-family: 'Covered By Your Grace', cursive;
+*font-family: 'Nunito', sans-serif;
+*font-family: 'Lato', sans-serif;
+*font-family: 'Poppins', sans-serif;
+*font-family: 'Roboto', sans-serif;
+*/
 
 *{
     margin: 0;
@@ -33,12 +40,6 @@ html{
     font-size: 62.5%;
     scroll-behavior: smooth;
 }
-/*
-*font-family: 'Covered By Your Grace', cursive;
-*font-family: 'Lato', sans-serif;
-*font-family: 'Nunito', sans-serif;
-*font-family: 'Roboto', sans-serif;
-*/
 body{}
 h1{
     font-size: 8rem;
@@ -57,9 +58,7 @@ a{
     color: var(--white-color);
 }
 
-
 /* CLASSES */
-
 /* CLASSES GLOBAIS */
 .main-content{
     max-width: 120rem;
@@ -111,8 +110,8 @@ a{
     list-style: none;
 }
 .menu ul li a{
-    font-family: 'Nunito', sans-serif;
-    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
     display: block;
     padding: 2rem;
     font-size: 1.6rem;
@@ -137,12 +136,6 @@ a{
 
 
 
-
-
-
-
-
-
 /* CLASSES DA INTRO */
 .overlay {
     position: absolute;
@@ -152,19 +145,6 @@ a{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4); /* Ajuste o valor alfa (último número) para controlar a transparência */
 }
-.intro-content{
-    /* position: relative;
-    text-align: center; */
-
-    position: relative;
-    text-align: center;
-    display: flex;
-    justify-content: flex-start; /* Centraliza horizontalmente */
-    align-items: flex-end; /* Alinha verticalmente ao topo */
-    min-height: 100vh;
-    color: var(--white-color);
-    flex-direction: row; /* Coloca os elementos em coluna */
-}
 .intro{
     background-image: url("../img/salgados/salgado\ \(10\).jpg");
     background-size: cover;
@@ -173,40 +153,29 @@ a{
     position: relative;
     min-height: 100vh;
     color: var(--white-color);
+}
+.intro-content{
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    /* align-items: center;
-    justify-content: center; */
+    flex-direction: row;
+    position: relative;
+    padding-left: 0;
+    padding-top: 25rem;
+    margin-left: 2rem;
 }
 .intro-text-content{
-    text-align: left; /* Alinha o texto à esquerda */
-    max-width: 600px; /* Define uma largura máxima para o conteúdo (ajuste conforme necessário) */
-    padding: 0 20px; /* Adiciona algum espaçamento às margens */
+
 }
-.intro-text-content p{
-    font-size: 2rem;
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    padding-bottom: 5rem;
-}
-.intro-text-content h2{
-    font-size: 4rem;
+.intro-text-content >h2{
+    font-size: 5rem;
     text-transform: uppercase;
-    font-family: 'Lato', sans-serif;
+    letter-spacing: 1rem;
+    font-family: 'Popins', sans-serif;
 }
 .intro-text-content .coxinha{
     font-size: 25rem;
     text-transform: uppercase;
     font-family: 'Covered By Your Grace';
 }
-
-
-
-
-
-
 
 
 
@@ -227,12 +196,9 @@ a{
     align-items: left;
 }
 .sobre-img{
-    max-height: 50rem;
-    max-width: 60rem;
-}
-.sobre-img img{
+    width: 70rem;
     height: 50rem;
-    width: 100%;
+    background: url('../img/salgados/salgado\ \(12\).jpg') no-repeat bottom;
 }
 .sobre-text-content{}
 .sobre-text-content h2{
@@ -246,28 +212,6 @@ a{
     font-size: 2rem;
     padding: 2rem 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -289,6 +233,12 @@ a{
 }
 .close-menu{
     display: none;
+}
+@media(max-width: 1200px){
+    .sobre-content{
+        grid-template-columns: 1fr;
+        align-items: center;
+    }
 }
 @media(max-width: 800px){
 
@@ -335,20 +285,20 @@ a{
 
 
     /* INTRO - INTRO -INTRO - INTRO -INTRO - INTRO - INTRO - INTRO */
-    .intro-text-content h2{
-        padding-bottom: 2rem;
+    .intro-text-content >h2{
+        font-size: 2rem;
+        letter-spacing: 0.75rem;
     }
-    .intro-text-content p{
-        font-size: 1.6rem;
-        padding-bottom: 2.6rem;
-    }
-    .intro-text-content h2{
-        padding-bottom: 1.6rem;
-    }
-    .intro-form a{
-        font-size: calc(2rem - 50%);
-        border-radius: 2rem;
-        padding: 1rem;
+    .intro-text-content .coxinha{
+        font-size: 10rem;
     }
     /* INTRO - INTRO -INTRO - INTRO -INTRO - INTRO - INTRO - INTRO */
+
+
+    /* SOBRE - SOBRE - SOBRE - SOBRE - SOBRE - SOBRE - SOBRE - SOBRE*/
+    .sobre-img{
+        width: 100%;
+        height: 30rem;
+    }
+    /* SOBRE - SOBRE - SOBRE - SOBRE - SOBRE - SOBRE - SOBRE - SOBRE*/
 }
