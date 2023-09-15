@@ -4,10 +4,26 @@
     --red-color: #DB0007;
     --yellow-color: #FBE00A;
     --white-color: white;
+    --gray-color: #E5E5E5;
     --gap: 3rem;
 }
 
 /* VÁRIAVEIS DE CONFIGURAÇÕES GLOBAIS */
+@font-face {
+    font-family: 'Covered By Your Grace';
+    src: url('../fonts/covered-by-your-grace/covered-by-your-grace.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    /*
+    Tipos de format
+    - opentype (otf)
+    - truetype (ttf)
+    - embedded-opentype (eot)
+    - woff
+    - woff2
+    */
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -18,6 +34,7 @@ html{
     scroll-behavior: smooth;
 }
 /*
+*font-family: 'Covered By Your Grace', cursive;
 *font-family: 'Lato', sans-serif;
 *font-family: 'Nunito', sans-serif;
 *font-family: 'Roboto', sans-serif;
@@ -32,12 +49,11 @@ h2{
     text-transform: uppercase;
 }
 p{
-    font-size: 4rem;
-    line-height: 1.2rem;
+    font-size: 2rem;
+    line-height: 1.2;
 }
 a{
     text-decoration: none;
-    font-family: 'Numito', sans-serif;
     color: var(--white-color);
 }
 
@@ -67,7 +83,7 @@ a{
 
 /* CLASSES DO MENU */
 .menu-spacing{
-    height: 6.5rem;
+    /* height: 6.5rem; */
 }
 .menu{
     position: fixed;
@@ -76,7 +92,7 @@ a{
     right: 0;
     width: 100%;
     z-index: 1;
-    border-bottom: 0.3rem solid var(--white-color);
+    border-bottom: 0.1rem solid var(--gray-color);
 }
 .menu-content{
     display: flex;
@@ -127,6 +143,115 @@ a{
 
 
 
+/* CLASSES DA INTRO */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Ajuste o valor alfa (último número) para controlar a transparência */
+}
+.intro-content{
+    /* position: relative;
+    text-align: center; */
+
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start; /* Centraliza horizontalmente */
+    align-items: flex-end; /* Alinha verticalmente ao topo */
+    min-height: 100vh;
+    color: var(--white-color);
+    flex-direction: row; /* Coloca os elementos em coluna */
+}
+.intro{
+    background-image: url("../img/salgados/salgado\ \(10\).jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 100vh;
+    color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    /* align-items: center;
+    justify-content: center; */
+}
+.intro-text-content{
+    text-align: left; /* Alinha o texto à esquerda */
+    max-width: 600px; /* Define uma largura máxima para o conteúdo (ajuste conforme necessário) */
+    padding: 0 20px; /* Adiciona algum espaçamento às margens */
+}
+.intro-text-content p{
+    font-size: 2rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    padding-bottom: 5rem;
+}
+.intro-text-content h2{
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+}
+.intro-text-content .coxinha{
+    font-size: 25rem;
+    text-transform: uppercase;
+    font-family: 'Covered By Your Grace';
+}
+
+
+
+
+
+
+
+
+
+
+/* CLASSES DO SOBRE */
+.sobre{}
+.sobre-content{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+    gap: var(--gap);
+    min-height: 90vh;
+}
+.sobre-text-content, .sobre-img{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: left;
+}
+.sobre-img{
+    max-height: 50rem;
+    max-width: 60rem;
+}
+.sobre-img img{
+    height: 50rem;
+    width: 100%;
+}
+.sobre-text-content{}
+.sobre-text-content h2{
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    color: var(--red-color);
+}
+.sobre-text-content p{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+    padding: 2rem 0;
+}
+
+
+
+
+
+
 
 
 
@@ -147,6 +272,21 @@ a{
 
 
 /* -------------------->>>>> RESPONSIVIDADE */
+.back-to-top{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--red-color);
+    color: red;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
 .close-menu{
     display: none;
 }
@@ -192,4 +332,23 @@ a{
         height: 0;
     }
     /* MENU - MENU - MENU - MENU - MENU - MENU - MENU - MENU - MENU */
+
+
+    /* INTRO - INTRO -INTRO - INTRO -INTRO - INTRO - INTRO - INTRO */
+    .intro-text-content h2{
+        padding-bottom: 2rem;
+    }
+    .intro-text-content p{
+        font-size: 1.6rem;
+        padding-bottom: 2.6rem;
+    }
+    .intro-text-content h2{
+        padding-bottom: 1.6rem;
+    }
+    .intro-form a{
+        font-size: calc(2rem - 50%);
+        border-radius: 2rem;
+        padding: 1rem;
+    }
+    /* INTRO - INTRO -INTRO - INTRO -INTRO - INTRO - INTRO - INTRO */
 }
